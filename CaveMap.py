@@ -26,7 +26,7 @@ fg = folium.FeatureGroup(name="My Map")
 for lt,ln,nm,el in zip(lat,lon,names,elev):
     fg.add_child(folium.Marker(location=[lt,ln],
                                popup=str(nm)+" "+str(el)+"m",
-                               icon=folium.Icon(color=colorGen(el))))
+                               icon=folium.Icon(icon="circle",color=colorGen(el))))
     
 map.add_child(fg)
 map.save("Caves.html")
