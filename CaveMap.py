@@ -7,7 +7,7 @@ lon = list(data[" Longitude"])
 names = list(data[" Cave Name"])
 
 map = folium.Map(location=[23.542137394,78.295198388],
-                 zoom_start=6,
+                 zoom_start=8,
                  tiles="Stamen Terrain")
 
 fg = folium.FeatureGroup(name="My Map")
@@ -20,5 +20,3 @@ for lt,ln,nm in zip(lat,lon,names):
 map.add_child(fg)
 map.save("Caves.html")
 
-#print(lon)
-#print(lat)
