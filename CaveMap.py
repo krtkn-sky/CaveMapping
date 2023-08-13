@@ -23,10 +23,13 @@ map = folium.Map(location=[23.542137394,78.295198388],
 
 fg = folium.FeatureGroup(name="My Map")
 
-for lt,ln,nm,el in zip(lat,lon,names,elev):
-    fg.add_child(folium.Marker(location=[lt,ln],
-                               popup=str(nm)+" "+str(el)+"m",
-                               icon=folium.Icon(icon="circle",color=colorGen(el))))
+for lt, ln, nm, el in zip(lat, lon, names, elev):
+    fg.add_child(folium.CircleMarker(location=[lt,ln],
+                                     radius=6,
+                                     popup=str(nm)+" "+str(el)+" m",
+                                     fill_color=colorGen(el),
+                                     color=colorGen(el),fill=True,
+                                     fill_opacity=0.7))
     
 map.add_child(fg)
 map.save("Caves.html")
